@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 #define n 100
 
@@ -7,29 +7,29 @@ class Stack
     int* arr;
     int top;
 
-    public:
+public:
     Stack()
     {
-        arr=new int[n];
-        top=-1;
+        arr = new int[n];
+        top = -1;
     }
 
     void push(int x)
     {
-        if(top==-1)
+        if (top == n - 1)
         {
-            cout<<"Stack overflow!";
+            cout << "Stack overflow!";
             return;
         }
         top++;
-        arr[top]=x;
+        arr[top] = x;
     }
 
     void pop()
     {
-        if(top==-1)
+        if (top == -1)
         {
-            cout<<"No element to pop!"<<endl;
+            cout << "No element to pop!" << endl;
             return;
         }
         top--;
@@ -37,33 +37,59 @@ class Stack
 
     int Top()
     {
-    
-        if(top==-1)
+        if (top == -1)
         {
-            cout<<"No element in Stack!"<<endl;
+            cout << "No element in Stack!" << endl;
             return -1;
         }
         return arr[top];
     }
+
     bool empty()
     {
-        return top==-1;
+        return top == -1;
     }
 };
+
 int main()
 {
-   Stack st;
-   st.push(1);
-   st.push(2);
-   st.push(3);
-   cout<<st.Top()<<endl;
+    Stack st;
+    int choice, item;
 
-   st.pop();
-   cout<<st.Top()<<endl;
+    while (true)
+    {
+        cout << "Stack Menu:" << endl;
+        cout << "1. Push" << endl;
+        cout << "2. Pop" << endl;
+        cout << "3. Peek" << endl;
+        cout << "4. Check if empty" << endl;
+        cout << "5. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-   st.pop();
-   st.pop();
-   st.pop();
-   cout<<st.empty()<<endl;
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter element to push: ";
+            cin >> item;
+            st.push(item);
+            break;
+        case 2:
+            st.pop();
+            break;
+        case 3:
+            cout << "Top element: " << st.Top() << endl;
+            break;
+        case 4:
+            cout << "Stack is " << (st.empty() ? "empty" : "not empty") << endl;
+            break;
+        case 5:
+            cout << "Exiting the program." << endl;
+            return 0;
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
+    return 0;
 }
