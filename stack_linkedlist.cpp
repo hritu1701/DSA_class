@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Created node
+
 class Node {
 public:
     int data;
@@ -12,6 +14,8 @@ public:
         next = nullptr;
     }
 };
+
+//creating all stack functions
 
 class Stack {
 private:
@@ -69,8 +73,10 @@ public:
 
 int main() {
     Stack st;
-    int choice;
 
+//Using switch case for user input
+
+    int choice;
     while (true) {
         cout << "Stack Menu:" << endl;
         cout << "1. Push" << endl;
