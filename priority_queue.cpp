@@ -43,8 +43,15 @@ int main() {
             pq.push(arr[i]);
         }
 
-        switch (choice) {
+        switch (choice) 
+		    {
+
             case 1: {
+
+				 if (!pq.empty()) {
+                 int front = pq.top();
+                 pq.pop();
+
                 int element;
                 cout << "Enter the element to enqueue: ";
                 cin >> element;
@@ -52,7 +59,11 @@ int main() {
 
                 cout<<"After enqueue: ";  
 				displayPriorityQueue(pq);
-                break;
+				 }
+
+				 else 
+				 cout<< "Queue is empty." << endl;
+                 break;
             }
             case 2: {
                 if (!pq.empty()) {
@@ -76,7 +87,7 @@ int main() {
             }
             default:
                 cout << "Invalid choice.!" << endl;
-        }
+            }
 
         cout << endl;
     }
