@@ -30,7 +30,7 @@ int main()
 
 	cout << "Priority Queue: ";
 	while (!pq.empty()) {
-		cout << pq.top() << ' ';
+		cout << pq.top() <<" ";
 		pq.pop();
 	}
 
