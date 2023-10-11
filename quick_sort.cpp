@@ -36,7 +36,7 @@ void quickSort(int arr[], int start, int end) {
 int main() {
 
     int n;
-    cout<<"Enter the size: ";
+    cout<<"Enter the size of array: ";
     cin>>n;
     int arr[n];
 
